@@ -6,68 +6,47 @@ public class Main {
     public static void main(String[] args) {
 
         Paciente dora = new Paciente();
-        dora.cpf = "12345";
-        dora.genero = 'F';
-        dora.idade = 75;
-        dora.nome = "Dora Vieira";
-        dora.telefone = "7898-7852";
+        dora.setCpf("12345");
+        dora.setGenero('F');
+        dora.setIdade(75);
+        dora.setNome("Dora Vieira");
+        dora.setTelefone("7898-7852");
         dora.mostrar();
 
         System.out.println();
-        System.out.println("___________");
-        System.out.println();
 
-        Medico dilo = new Medico();
-        dilo.crm = "3456.90";
-        dilo.nome = "Dilo Antonio";
-        dilo.telefone = "4598-4856";
-        dilo.especialidade = "ortopedia";
-        dilo.senha = "123456";
+        Medico dilo = new Medico("3456.90", "Dilo Antonio", "4598-4856", "ortopedia", "123456");
         dilo.mostrar();
 
         System.out.println();
-        System.out.println("___________");
-        System.out.println();
 
-        Recepcionista valeria = new Recepcionista();
-        valeria.nome = "Valeria Tata";
-        valeria.cpf = "4833521";
-        valeria.telefone = "9999-88888";
-        valeria.senha = "987654";
+        Recepcionista valeria = new Recepcionista("Valeria Tata", "4833521", "9999-88888", "987654");
         valeria.mostrar();
 
         System.out.println();
-        System.out.println("___________");
-        System.out.println();
 
-        Agenda marcado = new Agenda();
-        marcado.data = new Date();
-        marcado.hora = new Date();
-        marcado.medico = "Dilo";
-        marcado.paciente = "Dora";
+        Agenda marcado = new Agenda(new Date(), new Date(), "Dilo", "Dora");
         marcado.mostrar();
 
         System.out.println();
-        System.out.println("___________");
-        System.out.println();
 
         Consulta analise = new Consulta();
-        analise.data = new Date();
-        analise.hora = new Date();
-        analise.medico = "Dilo";
-        analise.paciente = "Dora";
-        analise.motivo = "Dor no braço";
-        analise.historico = "Dorme do lado esquerdo";
+        analise.setData(new Date());
+        analise.setHora(new Date());
+        analise.setMedico("Dilo");
+        analise.setPaciente("Dora");
+        analise.setMotivo("Dor no braço");
+        analise.setHistorico("Dorme do lado esquerdo");
         analise.mostrar();
 
         System.out.println();
-        System.out.println("___________");
+
+        Exame pedido = new Exame("Raio X", new Date(), "Braço esquerdo");
+        pedido.mostrar();
+
         System.out.println();
 
-        Exame pedido = new Exame();
-        pedido.consulta = "Raio X";
-        pedido.data = new Date();
-        pedido.descritivo = "Braço esquerdo";
-        pedido.mostrar();
+        Receita remedio = new Receita("Arnica", new Date(), "Passar duas vezes ao dia");
+        remedio.mostrar();
     }
 }

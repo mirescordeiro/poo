@@ -1,21 +1,67 @@
 package org.example;
 
 public class Recepcionista {
-    public String nome;
-    public String cpf;
-    public String telefone;
-    public String senha;
+    private String nome;
+    private String cpf;
+    private String telefone;
+    private String senha;
+
+    public Recepcionista(String nome, String cpf, String telefone, String senha) {
+        setNome(nome);
+        setCpf(cpf);
+        setTelefone(telefone);
+        setSenha(senha);
+    }
+
+    public Recepcionista() {
+        setNome("");
+        setCpf("");
+        setTelefone("");
+        setSenha("");
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public void acessar(){
         //todo
     }
 
     public void mostrar(){
-        System.out.println("Recepcionista");
+        System.out.println("----Recepcionista----");
         System.out.println();
-        System.out.println("nome: "+nome);
-        System.out.println("cpf: "+cpf);
-        System.out.println("tel: "+telefone);
-        System.out.println("senha: "+senha);
+        System.out.println("nome: "+getNome());
+        System.out.println("cpf: "+getCpf());
+        System.out.println("tel: "+getTelefone());
+        System.out.println("senha: "+getSenha());
     }
 }

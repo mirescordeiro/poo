@@ -7,9 +7,45 @@ import java.util.Date;
 public class Receita {
     public DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-    public String consulta;
-    public Date data;
-    public String descritivo;
+    private String consulta;
+    private Date data;
+    private String descritivo;
+
+    public Receita(String consulta, Date data, String descritivo) {
+        setConsulta(consulta);
+        setData(data);
+        setDescritivo(descritivo);
+    }
+
+    public Receita() {
+        setConsulta("");
+        setData(new Date());
+        setDescritivo("");
+    }
+
+    public String getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(String consulta) {
+        this.consulta = consulta;
+    }
+
+    public String getData() {
+        return dateFormat.format(data);
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
+
+    public void setDescritivo(String descritivo) {
+        this.descritivo = descritivo;
+    }
 
     public void preescrever(){
         //todo
@@ -20,8 +56,10 @@ public class Receita {
     }
 
     public void mostrar(){
-        System.out.println("consulta: "+consulta);
-        System.out.println("data: "+dateFormat.format(data));
-        System.out.println("descritivo: "+descritivo);
+        System.out.println("----Receita----");
+        System.out.println();
+        System.out.println("consulta: "+getConsulta());
+        System.out.println("data: "+getData());
+        System.out.println("descritivo: "+getDescritivo());
     }
 }
