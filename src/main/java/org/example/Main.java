@@ -5,13 +5,18 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
-        Paciente dora = new Paciente();
-        dora.setCpf("12345");
-        dora.setGenero('F');
-        dora.setIdade(75);
-        dora.setNome("Dora Vieira");
-        dora.setTelefone("7898-7852");
-        dora.mostrar();
+        try {
+            Paciente dora = new Paciente();
+            dora.setCpf("12345");
+            dora.setGenero('F');
+            dora.setIdade(75);
+            dora.setNome("Dora Vieira");
+            dora.setTelefone("7898-7852");
+            dora.mostrar();
+        } catch(Exception error){
+            System.out.println(error.getMessage());
+        }
+
 
         System.out.println();
 
