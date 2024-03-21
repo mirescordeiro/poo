@@ -61,11 +61,14 @@ public class Main {
             System.out.println(error.getMessage());
         }
 
-
         System.out.println();
 
-        Exame pedido = new Exame("Raio X", new Date(), "Braço esquerdo");
-        pedido.mostrar();
+        try {
+            Exame pedido = new Exame("Raio X", new Date(), "Braço esquerdo");
+            pedido.mostrar();
+        } catch (Exception error){
+            System.out.println(error.getMessage());
+        }
 
         System.out.println();
 
