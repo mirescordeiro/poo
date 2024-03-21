@@ -9,21 +9,67 @@ public class Agenda {
 
     public DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
 
-    public Date data;
-    public Date hora;
-    public String medico;
-    public String paciente;
+    private Date data;
+    private Date hora;
+    private String medico;
+    private String paciente;
+
+    public Agenda(Date data, Date hora, String medico, String paciente) {
+        setData(data);
+        setHora(hora);
+        setMedico(medico);
+        setPaciente(paciente);
+    }
+
+    public Agenda() {
+        setData(new Date());
+        setHora(new Date());
+        setMedico("");
+        setPaciente("");
+    }
+
+    public String getData() {
+        return dateFormat.format(data);
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hourFormat.format(hora);
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
+    public String getMedico() {
+        return medico;
+    }
+
+    public void setMedico(String medico) {
+        this.medico = medico;
+    }
+
+    public String getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(String paciente) {
+        this.paciente = paciente;
+    }
 
     public void consultar(){
         //todo
     }
 
     public void mostrar(){
-        System.out.println("Agenda");
+        System.out.println("----Agenda----");
         System.out.println();
-        System.out.println("data: "+dateFormat.format(data));
-        System.out.println("hora: "+hourFormat.format(hora));
-        System.out.println("médico: "+medico);
-        System.out.println("paciente: "+paciente);
+        System.out.println("data: "+getData());
+        System.out.println("hora: "+getHora());
+        System.out.println("médico: "+getMedico());
+        System.out.println("paciente: "+getPaciente());
     }
 }

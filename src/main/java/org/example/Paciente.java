@@ -1,11 +1,67 @@
 package org.example;
 
 public class Paciente {
-    public String nome;
-    public String cpf;
-    public String telefone;
-    public char genero;
-    public int idade;
+    private String nome;
+    private String cpf;
+    private String telefone;
+    private char genero;
+    private int idade;
+
+    public Paciente(String nome, String cpf, String telefone, char genero, int idade) {
+        setNome(nome);
+        setCpf(cpf);
+        setTelefone(telefone);
+        setGenero(genero);
+        setIdade(idade);
+    }
+
+    public Paciente() {
+        setNome("");
+        setCpf("");
+        setTelefone("");
+        setGenero('\0');
+        setIdade(0);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
 
     public void consultar(){
         //todo
@@ -15,12 +71,12 @@ public class Paciente {
         return false;
     }
     public void mostrar(){
-        System.out.println("Paciente");
+        System.out.println("----Paciente----");
         System.out.println();
-        System.out.println("nome: "+nome);
-        System.out.println("cpf: "+cpf);
-        System.out.println("tel: "+telefone);
-        System.out.println("gênero: "+genero);
-        System.out.println("idade: "+idade);
+        System.out.println("nome: "+getNome());
+        System.out.println("cpf: "+getCpf());
+        System.out.println("tel: "+getTelefone());
+        System.out.println("gênero: "+getGenero());
+        System.out.println("idade: "+getIdade());
     }
 }
