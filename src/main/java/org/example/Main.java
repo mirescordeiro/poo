@@ -26,11 +26,14 @@ public class Main {
             System.out.println(error.getMessage());
         }
 
-
         System.out.println();
 
-        Recepcionista valeria = new Recepcionista("Valeria Tata", "4833521", "9999-88888", "987654");
-        valeria.mostrar();
+        try {
+            Recepcionista valeria = new Recepcionista("Valeria Tata", "4833521", "9999-88888", "987654");
+            valeria.mostrar();
+        } catch (Exception error){
+            System.out.println(error.getMessage());
+        }
 
         System.out.println();
 

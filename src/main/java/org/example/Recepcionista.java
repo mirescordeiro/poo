@@ -6,14 +6,14 @@ public class Recepcionista {
     private String telefone;
     private String senha;
 
-    public Recepcionista(String nome, String cpf, String telefone, String senha) {
+    public Recepcionista(String nome, String cpf, String telefone, String senha) throws Exception {
         setNome(nome);
         setCpf(cpf);
         setTelefone(telefone);
         setSenha(senha);
     }
 
-    public Recepcionista() {
+    public Recepcionista() throws Exception {
         setNome("");
         setCpf("");
         setTelefone("");
@@ -24,8 +24,12 @@ public class Recepcionista {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+        if(nome.isEmpty()){
+            throw new Exception("Favor informar o nome do recepcionista.");
+        } else {
+            this.nome = nome;
+        }
     }
 
     public String getCpf() {
