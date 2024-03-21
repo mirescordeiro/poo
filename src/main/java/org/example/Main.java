@@ -37,8 +37,12 @@ public class Main {
 
         System.out.println();
 
-        Agenda marcado = new Agenda(new Date(), new Date(), "Dilo", "Dora");
-        marcado.mostrar();
+        try {
+            Agenda marcado = new Agenda(new Date(), new Date(), "Dilo", "Dora");
+            marcado.mostrar();
+        } catch(Exception error){
+            System.out.println(error.getMessage());
+        }
 
         System.out.println();
 
