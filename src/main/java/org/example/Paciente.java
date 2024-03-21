@@ -29,7 +29,7 @@ public class Paciente {
 
     public void setNome(String nome) throws Exception {
         if(nome.isEmpty()){
-            throw new Exception("Favor informar o nome do paciente.");
+            throw new Exception("Informe o nome do paciente.");
         } else {
             this.nome = nome;
         }

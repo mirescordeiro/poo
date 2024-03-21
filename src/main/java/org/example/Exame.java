@@ -45,7 +45,7 @@ public class Exame {
 
     public void setDescritivo(String descritivo) throws Exception {
         if(descritivo.isEmpty()){
-            throw new Exception("Favor adicionar uma descrição.");
+            throw new Exception("Adicione uma descrição.");
         } else {
             this.descritivo = descritivo;
         }

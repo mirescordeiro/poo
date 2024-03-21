@@ -26,7 +26,7 @@ public class Recepcionista {
 
     public void setNome(String nome) throws Exception {
         if(nome.isEmpty()){
-            throw new Exception("Favor informar o nome do recepcionista.");
+            throw new Exception("Informe o nome do recepcionista.");
         } else {
             this.nome = nome;
         }
