@@ -7,7 +7,7 @@ public class Medico {
     private String especialidade;
     private String senha;
 
-    public Medico(String nome, String crm, String telefone, String especialidade, String senha) {
+    public Medico(String nome, String crm, String telefone, String especialidade, String senha) throws Exception {
         setNome(nome);
         setCrm(crm);
         setTelefone(telefone);
@@ -15,7 +15,7 @@ public class Medico {
         setSenha(senha);
     }
 
-    public Medico() {
+    public Medico() throws Exception {
         setNome("");
         setCrm("");
         setTelefone("");
@@ -27,8 +27,12 @@ public class Medico {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+        if(nome.isEmpty()){
+            throw new Exception("Favor informar o nome do médico.");
+        } else {
+            this.nome = nome;
+        }
     }
 
     public String getCrm() {

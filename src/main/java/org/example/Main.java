@@ -17,11 +17,15 @@ public class Main {
             System.out.println(error.getMessage());
         }
 
-
         System.out.println();
 
-        Medico dilo = new Medico("3456.90", "Dilo Antonio", "4598-4856", "ortopedia", "123456");
-        dilo.mostrar();
+        try {
+            Medico dilo = new Medico("3456.90", "Dilo Antonio", "4598-4856", "ortopedia", "123456");
+            dilo.mostrar();
+        } catch(Exception error){
+            System.out.println(error.getMessage());
+        }
+
 
         System.out.println();
 
