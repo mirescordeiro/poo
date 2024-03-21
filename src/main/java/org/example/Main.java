@@ -72,7 +72,12 @@ public class Main {
 
         System.out.println();
 
-        Receita remedio = new Receita("Arnica", new Date(), "Passar duas vezes ao dia");
-        remedio.mostrar();
+        try {
+            Receita remedio = new Receita("Arnica", new Date(), "Passar duas vezes ao dia");
+            remedio.mostrar();
+        } catch (Exception error){
+            System.out.println(error.getMessage());
+        }
+
     }
 }
