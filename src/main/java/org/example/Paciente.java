@@ -7,7 +7,7 @@ public class Paciente {
     private char genero;
     private int idade;
 
-    public Paciente(String nome, String cpf, String telefone, char genero, int idade) {
+    public Paciente(String nome, String cpf, String telefone, char genero, int idade) throws Exception {
         setNome(nome);
         setCpf(cpf);
         setTelefone(telefone);
@@ -15,7 +15,7 @@ public class Paciente {
         setIdade(idade);
     }
 
-    public Paciente() {
+    public Paciente() throws Exception {
         setNome("");
         setCpf("");
         setTelefone("");
@@ -27,8 +27,12 @@ public class Paciente {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+        if(nome.isEmpty()){
+            throw new Exception("Informe o nome do paciente.");
+        } else {
+            this.nome = nome;
+        }
     }
 
     public String getCpf() {

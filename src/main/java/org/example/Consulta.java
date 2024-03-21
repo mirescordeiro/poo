@@ -2,6 +2,7 @@ package org.example;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Consulta {
@@ -18,7 +19,7 @@ public class Consulta {
 
     private String historico;
 
-    public Consulta(Date data, Date hora, String medico, String paciente, String motivo, String historico) {
+    public Consulta(Date data, Date hora, String medico, String paciente, String motivo, String historico) throws Exception {
         setData(data);
         setHora(hora);
         setMedico(medico);
@@ -27,7 +28,7 @@ public class Consulta {
         setHistorico(historico);
     }
 
-    public Consulta() {
+    public Consulta() throws Exception {
         setData(new Date());
         setHora(new Date());
         setMedico("");
@@ -40,8 +41,12 @@ public class Consulta {
         return dateFormat.format(data);
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setData(Date data) throws Exception {
+        if(data.equals(new Date())){
+            throw new Exception("Não é possível agendar consultas para o mesmo dia.");
+        } else {
+            this.data = data;
+        }
     }
 
     public String getHora() {

@@ -11,13 +11,13 @@ public class Receita {
     private Date data;
     private String descritivo;
 
-    public Receita(String consulta, Date data, String descritivo) {
+    public Receita(String consulta, Date data, String descritivo) throws Exception {
         setConsulta(consulta);
         setData(data);
         setDescritivo(descritivo);
     }
 
-    public Receita() {
+    public Receita() throws Exception {
         setConsulta("");
         setData(new Date());
         setDescritivo("");
@@ -43,8 +43,12 @@ public class Receita {
         return descritivo;
     }
 
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
+    public void setDescritivo(String descritivo) throws Exception {
+        if(descritivo.isEmpty()){
+            throw new Exception("Adicione uma descrição.");
+        } else {
+            this.descritivo = descritivo;
+        }
     }
 
     public void preescrever(){

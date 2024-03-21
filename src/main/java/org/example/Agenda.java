@@ -14,14 +14,14 @@ public class Agenda {
     private String medico;
     private String paciente;
 
-    public Agenda(Date data, Date hora, String medico, String paciente) {
+    public Agenda(Date data, Date hora, String medico, String paciente) throws Exception {
         setData(data);
         setHora(hora);
         setMedico(medico);
         setPaciente(paciente);
     }
 
-    public Agenda() {
+    public Agenda() throws Exception {
         setData(new Date());
         setHora(new Date());
         setMedico("");
@@ -32,8 +32,12 @@ public class Agenda {
         return dateFormat.format(data);
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setData(Date data) throws Exception {
+        if(data.equals(new Date())){
+            throw new Exception("Não é possível realizar agendamentos para o mesmo dia.");
+        } else {
+            this.data = data;
+        }
     }
 
     public String getHora() {
