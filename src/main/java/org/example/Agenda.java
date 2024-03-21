@@ -34,7 +34,7 @@ public class Agenda {
 
     public void setData(Date data) throws Exception {
         if(data.equals(new Date())){
-            throw new Exception("Não é possível agendar consultas para o mesmo dia.");
+            throw new Exception("Não é possível realizar agendamentos para o mesmo dia.");
         } else {
             this.data = data;
         }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Main {
@@ -13,7 +15,7 @@ public class Main {
             dora.setNome("Dora Vieira");
             dora.setTelefone("7898-7852");
             dora.mostrar();
-        } catch(Exception error){
+        } catch (Exception error){
             System.out.println(error.getMessage());
         }
 
@@ -22,7 +24,7 @@ public class Main {
         try {
             Medico dilo = new Medico("3456.90", "Dilo Antonio", "4598-4856", "ortopedia", "123456");
             dilo.mostrar();
-        } catch(Exception error){
+        } catch (Exception error){
             System.out.println(error.getMessage());
         }
 
@@ -40,20 +42,25 @@ public class Main {
         try {
             Agenda marcado = new Agenda(new Date(), new Date(), "Dilo", "Dora");
             marcado.mostrar();
-        } catch(Exception error){
+        } catch (Exception error){
             System.out.println(error.getMessage());
         }
 
         System.out.println();
 
-        Consulta analise = new Consulta();
-        analise.setData(new Date());
-        analise.setHora(new Date());
-        analise.setMedico("Dilo");
-        analise.setPaciente("Dora");
-        analise.setMotivo("Dor no braço");
-        analise.setHistorico("Dorme do lado esquerdo");
-        analise.mostrar();
+        try {
+            Consulta analise = new Consulta();
+            analise.setData(new Date());
+            analise.setHora(new Date());
+            analise.setMedico("Dilo");
+            analise.setPaciente("Dora");
+            analise.setMotivo("Dor no braço");
+            analise.setHistorico("Dorme do lado esquerdo");
+            analise.mostrar();
+        } catch (Exception error){
+            System.out.println(error.getMessage());
+        }
+
 
         System.out.println();
 
